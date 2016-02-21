@@ -4,5 +4,5 @@ Describes a category of algorithms where one iterates through each distinct comb
 Define Z as the set of items that we have. We need to find every set of X subset from the Z set.
 
 Parameters:
-*n (the size of the Z set) 1
-*p (the size of the X subset) 2
+*n (the size of the Z set) 
+*p (the size of the X subset)
