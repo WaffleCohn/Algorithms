@@ -5,7 +5,7 @@ public class Combinations {
 		if (p > n || p <= 0) {
 			return;
 		}
-		int count = 0;
+
 		int[] ind = new int[p];
 		int d = 1;
 
