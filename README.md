@@ -3,8 +3,6 @@ A collection of useful algorithms to know implemented in Java. Each algorithm ha
 
 ## To Add
 * Breadth First Search
-* Combinations
 * Depth First Search
 * Greedy Algorithm
 * Knapsack
-* Levenshtein
