@@ -1,4 +1,4 @@
-Binary Search
+#Binary Search
 
 While the target value has not been found and the loop hasn't terminated:
 Find the middle value of the data and check if it is the value you're seaching for.
@@ -8,4 +8,4 @@ At the end, if no answer is found, it returns -1 to indicate that the answer doe
 
 Alternatively, use Java's Arrays.binarySearch() method that takes in two paramaters: the array to search through and the key to search for.
 
-Note: the data must already be sorted in alphanumeric order
+_Note: the data must already be sorted in alphanumeric order_
