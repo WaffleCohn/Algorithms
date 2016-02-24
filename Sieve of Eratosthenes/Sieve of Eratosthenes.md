@@ -1,0 +1,2 @@
+## Sieve of Eratosthenes
+The sieve is used to find prime numbers up until a given number N (ex: all primes from 1..1000). It assumes all numbers in the range 2..N are prime (1 isn't) then iterates through the first half of the set (2..N/2) and marks out all of its multiples that exist in the set. The remaining numbers will all be prime.

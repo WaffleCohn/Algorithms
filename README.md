@@ -22,7 +22,6 @@ A collection of useful algorithms to know implemented in Java. Each algorithm ha
 * Miller Rabbin Primality Test
 * Modular Inverses
 * Non-Intuitive Coins
-* Sieve of Eratosthenes
 * Sieve of Sundaram
 * Sorts (Bubble, Quick, Merge, Insertion, Selection, Heap, Introspective)
 * Word Search
