@@ -5,8 +5,10 @@ A collection of useful algorithms to know implemented in Java. Each algorithm ha
 * Binary Search
 * Combinations
 * Depth First Search
+* Greatest Common Denominator
 * Levenshtein
 * Permutations
+* Sieve of Eratosthenes
 
 ## To Add (in no particular order)
 * A\*
