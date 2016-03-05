@@ -10,14 +10,14 @@ import java.util.LinkedList;
  * |_|_|_|
  * |_|_|_|
  * </code> As seen above, the horizontal walls make a 3x3 array and the vertical walls make a 2x4 array.
- * 
+ *
  * @author Henry
  *
  */
 public class BorderedMazes {
 	/**
 	 * Coord class used to hold a row and column position
-	 * 
+	 *
 	 * @author Henry
 	 *
 	 */
@@ -38,7 +38,7 @@ public class BorderedMazes {
 
 	/**
 	 * Breadth-first transversal
-	 * 
+	 *
 	 * @param hwalls the horizontal walls
 	 * @param vwalls the vertical walls
 	 * @param start the starting point
@@ -48,25 +48,33 @@ public class BorderedMazes {
 		int rows = vwalls.length;
 		int cols = hwalls[0].length;
 		boolean flood[][] = new boolean[rows][cols];
-		LinkedList<Coord> locs = new LinkedList<Coord>();
+		LinkedList<Coord> locs = new LinkedList<Coord>(); // FIFO coord queue.
 
+		// Adds starting spot
 		locs.add(start);
 
+		// Iterates through each location and checks on four cardinal directions
 		while (!locs.isEmpty()) {
 			Coord loc = locs.removeFirst();
 			int r = loc.r, c = loc.c;
+
+			// If it is out-of-bounds continue.
 			if (r < 0 || c < 0 || r >= rows || c >= cols) {
 				continue;
 			}
+
+			// Finish point
 			if (r == finish.r && c == finish.c) {
 				// To do: something when we reached exit.
 			}
 
+			// If we been here continue.
 			if (flood[r][c]) {
 				continue;
 			}
 			flood[r][c] = true;
 
+			// Recurse on four cardinal directions if there is no wall there.
 			if (!vwalls[r][c + 1]) {
 				locs.add(new Coord(r, c + 1));
 			}
@@ -143,7 +151,7 @@ public class BorderedMazes {
 
 	/**
 	 * Utility method for copying a matrix (2-d array).
-	 * 
+	 *
 	 * @param mat
 	 * @return the copied matrix.
 	 */
@@ -157,7 +165,7 @@ public class BorderedMazes {
 
 	/**
 	 * Depth-first transversal of the maze.
-	 * 
+	 *
 	 * @param hwalls the horizontal walls
 	 * @param vwalls the vertical walls
 	 * @param been a 2-d array describing where we have been
@@ -169,10 +177,12 @@ public class BorderedMazes {
 		int cols = hwalls[0].length;
 		int r = loc.r, c = loc.c;
 
+		// Return if we are out of bounds.
 		if (r < 0 || c < 0 || r >= rows || c >= cols) {
 			return;
 		}
 
+		// Return if we been here
 		if (been[r][c]) {
 			return;
 		}
@@ -182,6 +192,7 @@ public class BorderedMazes {
 			// DO something with finish...
 		}
 
+		// Recurse on four cardinal directions if there is no wall there.
 		if (!vwalls[r][c + 1]) {
 			dft(hwalls, vwalls, copyMatrix(been), new Coord(r, c + 1), finish);
 		}
@@ -198,7 +209,7 @@ public class BorderedMazes {
 
 	/**
 	 * Displays the maze into standard output, using | for vertical walls and _ for horizontal walls.
-	 * 
+	 *
 	 * @param hwalls the horizontal walls
 	 * @param vwalls the vertical walls
 	 */
