@@ -8,7 +8,7 @@ public class AStar
 	/**
 	 * Object to store x and y
 	 */
-	private static class Position implements Comparable
+	private static class Position implements Comparable<Position>
 	{
 		private int x;
 		private int y;
@@ -61,9 +61,32 @@ public class AStar
 		}
 
 		@Override
-		public int compareTo(Object o)
+		public int compareTo(Position o)
 		{
-			return x - y;
+			if (y != o.y)
+				return y - o.y;
+			return x - o.x;
+		}
+
+		@Override
+		public boolean equals(Object o)
+		{
+			if (this == o) return true;
+			if (o == null || getClass() != o.getClass()) return false;
+
+			Position position = (Position) o;
+
+			if (x != position.x) return false;
+			return y == position.y;
+
+		}
+
+		@Override
+		public int hashCode()
+		{
+			int result = x;
+			result = 31 * result + y;
+			return result;
 		}
 
 		@Override
@@ -148,15 +171,18 @@ public class AStar
 			for (Position neighborPos : neighbors)
 			{
 				System.out.println("test: "+ neighborPos);
+				//System.out.println(closedSet);
 				if (closedSet.contains(neighborPos))
+				{
+					//System.out.println("test:( "+ neighborPos);
 					continue; //ignore already evaluated positions
-
+				}
 				// The distance from start to goal passing through current and the neighbor.
 				int tentativeGScore;
 				if (!gScore.containsKey(neighborPos))
 					gScore.put(neighborPos, 999999); //use large gScore values for unknown nodes
 				tentativeGScore = gScore.get(neighborPos) + 1;
-
+				//System.out.println(tentativeGScore);
 				if (!openSet.contains(neighborPos))
 					openSet.add(neighborPos); // Discover a new node
 				else if (tentativeGScore >= gScore.get(neighborPos))
