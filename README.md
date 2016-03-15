@@ -12,7 +12,6 @@ A collection of useful algorithms to know implemented in Java. Each algorithm ha
 
 ## To Add (in no particular order)
 * A\*
-* Breadth First Search
 * Co-Prime Sets
 * Djikstra (using nodes)
 * Downhill Mazes
@@ -20,10 +19,8 @@ A collection of useful algorithms to know implemented in Java. Each algorithm ha
 * Flood-Fill
 * Greedy Algorithm
 * Kadane's Algorithm (Largest Consecutive Sequence)
-* Knapsack
 * Miller Rabbin Primality Test
 * Modular Inverses
-* Non-Intuitive Coins
 * Sieve of Sundaram
 * Sorts (Bubble, Quick, Merge, Insertion, Selection, Heap, Introspective)
 * Word Search
