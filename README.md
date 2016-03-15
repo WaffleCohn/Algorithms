@@ -6,9 +6,13 @@ A collection of useful algorithms to know implemented in Java. Each algorithm ha
 * Combinations
 * Depth First Search
 * Greatest Common Denominator
+* Knapsack
+* LCM
 * Levenshtein
 * Permutations
+* Primality Test
 * Sieve of Eratosthenes
+* Un-intuitive coins
 
 ## To Add (in no particular order)
 * A\*
