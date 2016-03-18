@@ -11,11 +11,8 @@ public class uic{
   public static int uic(int[] coins, int n){
     int[] mins = new int[n+1];
     Arrays.fill(mins, -1);
-    for(int c : coins){
-      mins[c] = 1;
-    }
     mins[0] = 0;
-    for(int i = 0; i < n+1; i++){
+    for(int i = 1; i < n+1; i++){
       for(int c : coins){
         if(i-c >= 0){
           if(mins[i-c] != -1){
